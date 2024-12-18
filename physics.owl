@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/user/ontologies/2024/11/physics#"
+     xml:base="http://www.semanticweb.org/user/ontologies/2024/11/physics"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  
+    <!-- Ontology Declaration -->
+    <owl:Ontology rdf:about="http://www.semanticweb.org/user/ontologies/2024/11/physics"/>
+
+    <!-- Classes -->
+    <rdf:Description rdf:about="#PhysicsTopic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>PhysicsTopic</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#LearningObjective">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>LearningObjective</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#User">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>User</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#TutorAction">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>TutorAction</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Assessment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>Assessment</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#LearningResource">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>LearningResource</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#DifficultyLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>DifficultyLevel</rdfs:label>
+    </rdf:Description>
+
+    <!-- Object Properties -->
+    <rdf:Description rdf:about="#hasTopic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="#LearningObjective"/>
+        <rdfs:range rdf:resource="#PhysicsTopic"/>
+        <rdfs:label>hasTopic</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#hasAction">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="#LearningObjective"/>
+        <rdfs:range rdf:resource="#TutorAction"/>
+        <rdfs:label>hasAction</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#hasResource">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="#LearningObjective"/>
+        <rdfs:range rdf:resource="#LearningResource"/>
+        <rdfs:label>hasResource</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#hasAssessment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="#Assessment"/>
+        <rdfs:label>hasAssessment</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#hasDifficultyLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="#LearningObjective"/>
+        <rdfs:range rdf:resource="#DifficultyLevel"/>
+        <rdfs:label>hasDifficultyLevel</rdfs:label>
+    </rdf:Description>
+
+    <!-- Datatype Properties -->
+    <rdf:Description rdf:about="#hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="#PhysicsTopic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasName</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#hasScore">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="#Assessment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>hasScore</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#hasFeedback">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="#TutorAction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasFeedback</rdfs:label>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#hasTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+        <rdfs:label>hasTime</rdfs:label>
+    </rdf:Description>
+
+    <!-- Individuals -->
+    <rdf:Description rdf:about="#NewtonianMechanics">
+        <rdf:type rdf:resource="#PhysicsTopic"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Newtonian Mechanics</hasName>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UnderstandLawOfMotion">
+        <rdf:type rdf:resource="#LearningObjective"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Understand the Law of Motion</hasName>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#MediumDifficulty">
+        <rdf:type rdf:resource="#DifficultyLevel"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</hasName>
+    </rdf:Description>
+
+</rdf:RDF>
